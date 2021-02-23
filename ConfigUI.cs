@@ -26,17 +26,17 @@ namespace DeepDungeonDex
                 return;
             var flags = ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize;
             ImGui.SetNextWindowSizeConstraints(new Vector2(250, 100), new Vector2(1000, 1000));
-            ImGui.Begin("config", flags);
-            if (ImGui.SliderFloat("Opacity", ref opacity, 0.0f, 1.0f))
+            ImGui.Begin("设置", flags);
+            if (ImGui.SliderFloat("不透明度", ref opacity, 0.0f, 1.0f))
             {
                 config.Opacity = opacity;
             }
-            if (ImGui.Checkbox("Enable clickthrough", ref isClickthrough))
+            if (ImGui.Checkbox("启用鼠标穿透", ref isClickthrough))
             {
                 config.IsClickthrough = isClickthrough;
             }
             ImGui.NewLine();
-            if (ImGui.Button("Save"))
+            if (ImGui.Button("保存"))
             {
                 IsVisible = false;
                 config.Save();

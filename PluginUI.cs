@@ -28,33 +28,33 @@ namespace DeepDungeonDex
             ImGui.SetNextWindowSizeConstraints(new Vector2(250, 0), new Vector2(9001, 9001));
             ImGui.SetNextWindowBgAlpha(config.Opacity);
             ImGui.Begin("cool strati window", flags);
-            ImGui.Text("Name:\n"+TargetData.Name);
+            ImGui.Text("怪物名称：\n"+TargetData.Name);
             ImGui.NewLine();
             ImGui.Columns(3, null, false);
-            ImGui.Text("Aggro Type:\n");
+            ImGui.Text("怪物类型:\n");
             ImGui.Text(mobData.Aggro.ToString());
             ImGui.NextColumn();
-            ImGui.Text("Threat:\n");
+            ImGui.Text("难度:\n");
             switch (mobData.Threat)
             {
                 case DataHandler.MobData.ThreatLevel.Easy:
                     ImGui.PushStyleColor(ImGuiCol.Text, 0xFF00FF00);
-                    ImGui.Text("Easy");
+                    ImGui.Text("简单");
                     ImGui.PopStyleColor();
                     break;
                 case DataHandler.MobData.ThreatLevel.Caution:
                     ImGui.PushStyleColor(ImGuiCol.Text, 0xFF00FFFF);
-                    ImGui.Text("Caution");
+                    ImGui.Text("中等");
                     ImGui.PopStyleColor();
                     break;
                 case DataHandler.MobData.ThreatLevel.Dangerous:
                     ImGui.PushStyleColor(ImGuiCol.Text, 0xFF0000FF);
-                    ImGui.Text("Dangerous");
+                    ImGui.Text("困难");
                     ImGui.PopStyleColor();
                     break;
                 case DataHandler.MobData.ThreatLevel.Vicious:
                     ImGui.PushStyleColor(ImGuiCol.Text, 0xFFFF00FF);
-                    ImGui.Text("Vicious");
+                    ImGui.Text("噩梦");
                     ImGui.PopStyleColor();
                     break;
                 default:
@@ -62,17 +62,17 @@ namespace DeepDungeonDex
                     break;
             }
             ImGui.NextColumn();
-            ImGui.Text("Can stun:\n");
+            ImGui.Text("是否可眩晕:\n");
             switch (mobData.IsStunnable)
             {
                 case true:
                     ImGui.PushStyleColor(ImGuiCol.Text, 0xFF00FF00);
-                    ImGui.Text("Yes");
+                    ImGui.Text("是");
                     ImGui.PopStyleColor();
                     break;
                 case false:
                     ImGui.PushStyleColor(ImGuiCol.Text, 0xFF0000FF);
-                    ImGui.Text("No");
+                    ImGui.Text("否");
                     ImGui.PopStyleColor();
                     break;
                 default:
